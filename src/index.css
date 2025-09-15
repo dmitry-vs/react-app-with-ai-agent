@@ -1,0 +1,11 @@
+@layer theme, base, reset, antd, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "antd/dist/reset.css" layer(reset);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --color-border: #d9d9d9;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+}
