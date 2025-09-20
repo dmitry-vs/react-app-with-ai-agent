@@ -3,10 +3,12 @@ import { Table, Card, Spin, Alert, Typography, Button } from "antd";
 import { ReloadOutlined } from "@ant-design/icons";
 import type { ColumnsType } from "antd/es/table";
 import type { User } from "../types/user";
+import { useTranslation } from "react-i18next";
 
 const { Title } = Typography;
 
 const UsersTable: React.FC = () => {
+  const { t } = useTranslation();
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -36,14 +38,14 @@ const UsersTable: React.FC = () => {
 
   const columns: ColumnsType<User> = [
     {
-      title: "ID",
+      title: t("table.id"),
       dataIndex: "id",
       key: "id",
       width: 60,
       sorter: (a, b) => a.id - b.id,
     },
     {
-      title: "Name",
+      title: t("table.name"),
       key: "name",
       width: 200,
       render: (_, record) => `${record.firstname} ${record.lastname}`,
@@ -53,34 +55,34 @@ const UsersTable: React.FC = () => {
         ),
     },
     {
-      title: "Email",
+      title: t("table.email"),
       dataIndex: "email",
       key: "email",
       width: 250,
       sorter: (a, b) => a.email.localeCompare(b.email),
     },
     {
-      title: "Phone",
+      title: t("table.phone"),
       dataIndex: "phone",
       key: "phone",
       width: 150,
     },
     {
-      title: "City",
+      title: t("table.city"),
       dataIndex: ["address", "city"],
       key: "city",
       width: 120,
       sorter: (a, b) => a.address.city.localeCompare(b.address.city),
     },
     {
-      title: "Company",
+      title: t("table.company"),
       dataIndex: ["company", "name"],
       key: "company",
       width: 200,
       sorter: (a, b) => a.company.name.localeCompare(b.company.name),
     },
     {
-      title: "Website",
+      title: t("table.website"),
       dataIndex: "website",
       key: "website",
       width: 200,
@@ -100,7 +102,7 @@ const UsersTable: React.FC = () => {
     return (
       <Card className="mt-6">
         <Alert
-          message="Error Loading Users"
+          message={t("app.error")}
           description={error}
           type="error"
           showIcon
@@ -113,7 +115,7 @@ const UsersTable: React.FC = () => {
     <Card className="mt-6 shadow-lg border-2 border-gray-200">
       <div className="flex justify-between items-center mb-4">
         <Title level={2} className="mb-0 !font-raleway">
-          Users from JSONPlaceholder
+          {t("app.title")}
         </Title>
         <Button
           type="primary"
@@ -121,10 +123,10 @@ const UsersTable: React.FC = () => {
           onClick={fetchUsers}
           loading={loading}
         >
-          Reload Users
+          {t("app.reload")}
         </Button>
       </div>
-      <Spin spinning={loading} tip="Loading users...">
+      <Spin spinning={loading} tip={t("app.loading")}>
         <Table
           columns={columns}
           dataSource={users}
@@ -134,7 +136,11 @@ const UsersTable: React.FC = () => {
             showSizeChanger: true,
             showQuickJumper: true,
             showTotal: (total, range) =>
-              `${range[0]}-${range[1]} of ${total} users`,
+              t("table.pagination.showing", {
+                start: range[0],
+                end: range[1],
+                total,
+              }),
           }}
           scroll={{ x: 1200 }}
           size="middle"
