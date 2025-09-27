@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Dropdown, Space } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../hooks/useTypedTranslation";
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n, t } = useTranslation();

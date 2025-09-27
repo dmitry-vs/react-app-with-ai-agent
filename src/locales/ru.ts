@@ -1,0 +1,29 @@
+import type { Locale } from "./types";
+
+const ru: Locale = {
+  app: {
+    title: "Пользователи из JSONPlaceholder",
+    reload: "Обновить пользователей",
+    loading: "Загрузка пользователей...",
+    error: "Ошибка загрузки пользователей",
+  },
+  table: {
+    id: "ID",
+    name: "Имя",
+    email: "Электронная почта",
+    phone: "Телефон",
+    city: "Город",
+    company: "Компания",
+    website: "Веб-сайт",
+    pagination: {
+      showing: "{{start}}-{{end}} из {{total}} пользователей",
+    },
+  },
+  language: {
+    switch: "Переключить язык",
+    english: "English",
+    russian: "Русский",
+  },
+};
+
+export default ru;
