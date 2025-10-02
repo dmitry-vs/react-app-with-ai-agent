@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import UsersTable from "./components/UsersTable";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import theme from "./theme.json";
 import "./i18n";
 
@@ -28,6 +29,7 @@ function App() {
             <Layout.Content className="bg-primary-50 p-8">
               <UsersTable />
             </Layout.Content>
+            <Footer />
           </Layout>
           <ReactQueryDevtools initialIsOpen={false} />
         </ConfigProvider>

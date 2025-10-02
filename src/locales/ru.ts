@@ -44,6 +44,11 @@ const ru: Locale = {
     deleteSuccess: "Пост успешно удален!",
     deleteError: "Не удалось удалить пост",
   },
+  footer: {
+    madeWith: "Сделано с",
+    using: "использованием современных веб-технологий",
+    dataSource: "Данные предоставлены JSONPlaceholder API",
+  },
 };
 
 export default ru;

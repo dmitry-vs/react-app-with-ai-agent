@@ -44,6 +44,11 @@ const en: Locale = {
     deleteSuccess: "Post deleted successfully!",
     deleteError: "Failed to delete post",
   },
+  footer: {
+    madeWith: "Made with",
+    using: "using modern web technologies",
+    dataSource: "Data provided by JSONPlaceholder API",
+  },
 };
 
 export default en;

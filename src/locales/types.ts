@@ -42,4 +42,9 @@ export interface Locale {
     deleteSuccess: string;
     deleteError: string;
   };
+  footer: {
+    madeWith: string;
+    using: string;
+    dataSource: string;
+  };
 }
