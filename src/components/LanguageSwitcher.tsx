@@ -28,7 +28,11 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <Dropdown menu={{ items }} placement="bottomRight">
-      <Button type="text" icon={<GlobalOutlined />}>
+      <Button
+        type="text"
+        icon={<GlobalOutlined />}
+        className="[&_.anticon]:text-gray-600 dark:[&_.anticon]:text-gray-300 text-gray-600 dark:text-gray-300"
+      >
         <Space>{currentLanguage === "ru" ? "Русский" : "English"}</Space>
       </Button>
     </Dropdown>

@@ -12,7 +12,10 @@ const Footer: React.FC = () => {
   return (
     <AntFooter className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-center py-4">
       <Space direction="vertical" size="small">
-        <Text type="secondary" className="text-sm">
+        <Text
+          type="secondary"
+          className="text-sm text-gray-600 dark:text-gray-400"
+        >
           {t("footer.madeWith")} <HeartOutlined className="text-red-500" />{" "}
           {t("footer.using")}
         </Text>
@@ -44,7 +47,10 @@ const Footer: React.FC = () => {
             React
           </Link>
         </Space>
-        <Text type="secondary" className="text-xs">
+        <Text
+          type="secondary"
+          className="text-xs text-gray-600 dark:text-gray-400"
+        >
           {t("footer.dataSource")}
         </Text>
       </Space>
