@@ -24,6 +24,26 @@ const en: Locale = {
     english: "English",
     russian: "Русский",
   },
+  post: {
+    create: "Create Post",
+    title: "Post Title",
+    body: "Post Content",
+    submit: "Create Post",
+    cancel: "Cancel",
+    success: "Post created successfully!",
+    error: "Failed to create post",
+    userId: "User ID",
+    id: "Post ID",
+    notFound: "Post not found",
+    posts: "Posts",
+    loadingPosts: "Loading posts...",
+    noPosts: "No posts found for this user",
+    totalPosts: "Total Posts",
+    delete: "Delete",
+    deleteConfirm: "Are you sure you want to delete this post?",
+    deleteSuccess: "Post deleted successfully!",
+    deleteError: "Failed to delete post",
+  },
 };
 
 export default en;

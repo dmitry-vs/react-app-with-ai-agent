@@ -22,5 +22,24 @@ export interface Locale {
     english: string;
     russian: string;
   };
+  post: {
+    create: string;
+    title: string;
+    body: string;
+    submit: string;
+    cancel: string;
+    success: string;
+    error: string;
+    userId: string;
+    id: string;
+    notFound: string;
+    posts: string;
+    loadingPosts: string;
+    noPosts: string;
+    totalPosts: string;
+    delete: string;
+    deleteConfirm: string;
+    deleteSuccess: string;
+    deleteError: string;
+  };
 }
-

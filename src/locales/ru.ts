@@ -24,6 +24,26 @@ const ru: Locale = {
     english: "English",
     russian: "Русский",
   },
+  post: {
+    create: "Создать пост",
+    title: "Заголовок поста",
+    body: "Содержание поста",
+    submit: "Создать пост",
+    cancel: "Отмена",
+    success: "Пост успешно создан!",
+    error: "Не удалось создать пост",
+    userId: "ID пользователя",
+    id: "ID поста",
+    notFound: "Пост не найден",
+    posts: "Посты",
+    loadingPosts: "Загрузка постов...",
+    noPosts: "У этого пользователя нет постов",
+    totalPosts: "Всего постов",
+    delete: "Удалить",
+    deleteConfirm: "Вы уверены, что хотите удалить этот пост?",
+    deleteSuccess: "Пост успешно удален!",
+    deleteError: "Не удалось удалить пост",
+  },
 };
 
 export default ru;
