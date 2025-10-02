@@ -1,9 +1,9 @@
 import { StyleProvider } from "@ant-design/cssinjs";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, Layout } from "antd";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import UsersTable from "./components/UsersTable";
-import LanguageSwitcher from "./components/LanguageSwitcher";
+import Header from "./components/Header";
 import theme from "./theme.json";
 import "./i18n";
 
@@ -23,12 +23,12 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <StyleProvider layer>
         <ConfigProvider theme={theme as any}>
-          <div className="min-h-screen bg-primary-50 p-8">
-            <div className="flex justify-end mb-4">
-              <LanguageSwitcher />
-            </div>
-            <UsersTable />
-          </div>
+          <Layout className="min-h-screen">
+            <Header />
+            <Layout.Content className="bg-primary-50 p-8">
+              <UsersTable />
+            </Layout.Content>
+          </Layout>
           <ReactQueryDevtools initialIsOpen={false} />
         </ConfigProvider>
       </StyleProvider>
