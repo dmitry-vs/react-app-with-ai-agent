@@ -27,18 +27,18 @@ const Sidebar: React.FC = () => {
       trigger={null}
       collapsible
       collapsed={collapsed}
-      className="bg-white border-r border-gray-200 shadow-sm"
+      className="bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-sm"
       width={250}
       collapsedWidth={80}
     >
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
+      <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
         {!collapsed && (
-          <Title level={4} className="!mb-0 text-gray-800">
+          <Title level={4} className="!mb-0 text-gray-800 dark:text-gray-100">
             {t("sidebar.title")}
           </Title>
         )}
         <div
-          className="cursor-pointer text-gray-600 hover:text-gray-800 transition-colors"
+          className="cursor-pointer text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
           onClick={() => setCollapsed(!collapsed)}
         >
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}

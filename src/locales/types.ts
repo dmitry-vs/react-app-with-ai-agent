@@ -51,4 +51,8 @@ export interface Locale {
     title: string;
     users: string;
   };
+  theme: {
+    light: string;
+    dark: string;
+  };
 }

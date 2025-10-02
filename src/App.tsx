@@ -1,12 +1,14 @@
 import { StyleProvider } from "@ant-design/cssinjs";
-import { ConfigProvider, Layout } from "antd";
+import { ConfigProvider, Layout, theme } from "antd";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import UsersTable from "./components/UsersTable";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
-import theme from "./theme.json";
+import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
+import lightTheme from "./theme.json";
+import darkTheme from "./theme-dark.json";
 import "./i18n";
 
 // Create a client
@@ -20,11 +22,19 @@ const queryClient = new QueryClient({
   },
 });
 
-function App() {
+const AppContent: React.FC = () => {
+  const { theme: currentTheme } = useTheme();
+
+  // Prepare the theme configuration with algorithm
+  const themeConfig =
+    currentTheme === "dark"
+      ? { ...darkTheme, algorithm: theme.darkAlgorithm }
+      : lightTheme;
+
   return (
     <QueryClientProvider client={queryClient}>
       <StyleProvider layer>
-        <ConfigProvider theme={theme as any}>
+        <ConfigProvider theme={themeConfig as any}>
           <Layout className="min-h-screen">
             <Sidebar />
             <Layout>
@@ -39,6 +49,14 @@ function App() {
         </ConfigProvider>
       </StyleProvider>
     </QueryClientProvider>
+  );
+};
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

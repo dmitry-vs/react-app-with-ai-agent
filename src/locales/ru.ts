@@ -53,6 +53,10 @@ const ru: Locale = {
     title: "Навигация",
     users: "Пользователи",
   },
+  theme: {
+    light: "Светлая тема",
+    dark: "Тёмная тема",
+  },
 };
 
 export default ru;

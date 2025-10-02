@@ -53,6 +53,10 @@ const en: Locale = {
     title: "Navigation",
     users: "Users",
   },
+  theme: {
+    light: "Light theme",
+    dark: "Dark theme",
+  },
 };
 
 export default en;
