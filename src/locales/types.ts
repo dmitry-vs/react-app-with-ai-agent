@@ -47,4 +47,8 @@ export interface Locale {
     using: string;
     dataSource: string;
   };
+  sidebar: {
+    title: string;
+    users: string;
+  };
 }

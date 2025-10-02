@@ -49,6 +49,10 @@ const ru: Locale = {
     using: "использованием современных веб-технологий",
     dataSource: "Данные предоставлены JSONPlaceholder API",
   },
+  sidebar: {
+    title: "Навигация",
+    users: "Пользователи",
+  },
 };
 
 export default ru;

@@ -49,6 +49,10 @@ const en: Locale = {
     using: "using modern web technologies",
     dataSource: "Data provided by JSONPlaceholder API",
   },
+  sidebar: {
+    title: "Navigation",
+    users: "Users",
+  },
 };
 
 export default en;

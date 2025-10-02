@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import UsersTable from "./components/UsersTable";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 import theme from "./theme.json";
 import "./i18n";
 
@@ -25,11 +26,14 @@ function App() {
       <StyleProvider layer>
         <ConfigProvider theme={theme as any}>
           <Layout className="min-h-screen">
-            <Header />
-            <Layout.Content className="bg-primary-50 p-8">
-              <UsersTable />
-            </Layout.Content>
-            <Footer />
+            <Sidebar />
+            <Layout>
+              <Header />
+              <Layout.Content className="bg-primary-50 p-8">
+                <UsersTable />
+              </Layout.Content>
+              <Footer />
+            </Layout>
           </Layout>
           <ReactQueryDevtools initialIsOpen={false} />
         </ConfigProvider>
