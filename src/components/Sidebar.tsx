@@ -4,7 +4,9 @@ import {
   UserOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  CalculatorOutlined,
 } from "@ant-design/icons";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "../hooks/useTypedTranslation";
 
 const { Sider } = Layout;
@@ -13,14 +15,31 @@ const { Title } = Typography;
 const Sidebar: React.FC = () => {
   const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
     {
       key: "users",
       icon: <UserOutlined />,
       label: t("sidebar.users"),
+      onClick: () => navigate("/users"),
+    },
+    {
+      key: "counter",
+      icon: <CalculatorOutlined />,
+      label: t("sidebar.counter"),
+      onClick: () => navigate("/counter"),
     },
   ];
+
+  // Get the current route to set the selected key
+  const getSelectedKey = () => {
+    const path = location.pathname;
+    if (path === "/users") return "users";
+    if (path === "/counter") return "counter";
+    return "users"; // default
+  };
 
   return (
     <Sider
@@ -46,7 +65,7 @@ const Sidebar: React.FC = () => {
       </div>
       <Menu
         mode="inline"
-        defaultSelectedKeys={["users"]}
+        selectedKeys={[getSelectedKey()]}
         items={menuItems}
         className="border-none bg-transparent"
         style={{ height: "calc(100vh - 80px)" }}

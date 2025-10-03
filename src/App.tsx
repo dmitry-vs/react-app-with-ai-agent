@@ -2,7 +2,14 @@ import { StyleProvider } from "@ant-design/cssinjs";
 import { ConfigProvider, Layout, theme } from "antd";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import UsersTable from "./components/UsersTable";
+import Counter from "./components/Counter";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
@@ -32,23 +39,32 @@ const AppContent: React.FC = () => {
       : lightTheme;
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <StyleProvider layer>
-        <ConfigProvider theme={themeConfig as any}>
-          <Layout className="min-h-screen">
-            <Sidebar />
-            <Layout>
-              <Header />
-              <Layout.Content className="bg-primary-50 p-8">
-                <UsersTable />
-              </Layout.Content>
-              <Footer />
+    <Router>
+      <QueryClientProvider client={queryClient}>
+        <StyleProvider layer>
+          <ConfigProvider theme={themeConfig as any}>
+            <Layout className="min-h-screen">
+              <Sidebar />
+              <Layout>
+                <Header />
+                <Layout.Content className="bg-primary-50 p-8">
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={<Navigate to="/users" replace />}
+                    />
+                    <Route path="/users" element={<UsersTable />} />
+                    <Route path="/counter" element={<Counter />} />
+                  </Routes>
+                </Layout.Content>
+                <Footer />
+              </Layout>
             </Layout>
-          </Layout>
-          <ReactQueryDevtools initialIsOpen={false} />
-        </ConfigProvider>
-      </StyleProvider>
-    </QueryClientProvider>
+            <ReactQueryDevtools initialIsOpen={false} />
+          </ConfigProvider>
+        </StyleProvider>
+      </QueryClientProvider>
+    </Router>
   );
 };
 

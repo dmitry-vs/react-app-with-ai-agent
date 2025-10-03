@@ -52,10 +52,18 @@ const en: Locale = {
   sidebar: {
     title: "Navigation",
     users: "Users",
+    counter: "Counter",
   },
   theme: {
     light: "Light theme",
     dark: "Dark theme",
+  },
+  counter: {
+    title: "Counter",
+    currentValue: "Current Value",
+    increment: "Increment",
+    decrement: "Decrement",
+    reset: "Reset",
   },
 };
 

@@ -50,9 +50,17 @@ export interface Locale {
   sidebar: {
     title: string;
     users: string;
+    counter: string;
   };
   theme: {
     light: string;
     dark: string;
+  };
+  counter: {
+    title: string;
+    currentValue: string;
+    increment: string;
+    decrement: string;
+    reset: string;
   };
 }

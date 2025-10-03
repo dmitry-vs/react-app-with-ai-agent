@@ -52,10 +52,18 @@ const ru: Locale = {
   sidebar: {
     title: "Навигация",
     users: "Пользователи",
+    counter: "Счётчик",
   },
   theme: {
     light: "Светлая тема",
     dark: "Тёмная тема",
+  },
+  counter: {
+    title: "Счётчик",
+    currentValue: "Текущее значение",
+    increment: "Увеличить",
+    decrement: "Уменьшить",
+    reset: "Сбросить",
   },
 };
 
