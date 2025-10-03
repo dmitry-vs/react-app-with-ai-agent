@@ -17,7 +17,7 @@ const Counter: React.FC = () => {
     <div className="max-w-md mx-auto">
       <Card
         className="shadow-lg border-0 bg-white dark:bg-gray-800"
-        bodyStyle={{ padding: "2rem" }}
+        styles={{ body: { padding: "2rem 4rem" } }}
       >
         <div className="text-center">
           <Title level={2} className="text-gray-800 dark:text-gray-100 mb-6">
@@ -40,27 +40,21 @@ const Counter: React.FC = () => {
               onClick={increment}
               size="large"
               className="bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700"
-            >
-              {t("counter.increment")}
-            </Button>
+            />
 
             <Button
               icon={<MinusOutlined />}
               onClick={decrement}
               size="large"
               className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500"
-            >
-              {t("counter.decrement")}
-            </Button>
+            />
 
             <Button
               icon={<ReloadOutlined />}
               onClick={reset}
               size="large"
               className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500"
-            >
-              {t("counter.reset")}
-            </Button>
+            />
           </Space>
         </div>
       </Card>
